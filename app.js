@@ -3,11 +3,11 @@ const express = require('express');
 const bodyParser  = require('body-parser');
 const request = require('request');
 const https = require('https');
- require('dotenv').config();
+require('dotenv').config();
 const app = express()
 const port = 3000
 
-console.log(process.env);
+
 
 
 
@@ -40,12 +40,12 @@ app.post('/', function (req, res) {
   };
 
   const jsonData = JSON.stringify(data);
-
+    // the us2 part of the url depends on Your API key  it can anywhere between (us1-us20) which is the server your API key belongs to  
   const url = `https://us2.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`
 
   const options = {
       method:"POST",
-      auth: `Noor_Bayari:${process.env.API_KEY}`
+      auth: `admin:${process.env.API_KEY}`
   }
 
 
@@ -74,4 +74,4 @@ app.post('/failure', function (req, res) {
   res.redirect("/")
 })
 
-app.listen(process.env.PORT || 3000, () => console.log(`Server is running on port ${port}`))
+app.listen(process.env.PORT || port, () => console.log(`Server is running on port ${port}`))
