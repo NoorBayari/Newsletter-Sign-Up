@@ -1,7 +1,7 @@
 # Newsletter-Sign-Up
 simple Node.JS web application that helps users subscribe to your newsletter using Mailchimp API 
 
-if you want to use this in your projects you need to initalize NPM and install following packages :
+if you want to use this in your projects you need to initalize npm and install following packages :
 
 1. express
 2. https
